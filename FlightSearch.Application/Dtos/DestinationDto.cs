@@ -2,4 +2,4 @@
 
 namespace FlightSearch.Application.Dtos;
  
-public record DestinationDto(string code, string cityName, string countryName, string airportName);
+public record DestinationDto(string Code, string CityName, string CountryName, string AirportName);
