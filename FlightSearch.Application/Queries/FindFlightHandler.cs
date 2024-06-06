@@ -13,7 +13,7 @@ namespace FlightSearch.Application.Queries
             var flightInit = new FlightInitialData();
             
             var flights =  await flightInit.GetPreconfiguredFlightResult();
-            var fr = flights.Where(f => f.Origin.code == query.originame).ToArray();
+            var fr = flights.Where(f => f.Origin.Code == query.originame).ToArray();
             return new FindFlightResult(fr);
         }
     

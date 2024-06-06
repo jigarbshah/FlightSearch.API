@@ -3,14 +3,14 @@ using FlightSearch.Application.Queries;
 namespace FlightSearch.API.Endpoints;
 
 
-public record FingFlightByOriginResponse(FlightDto flights);
+public record FingFlightByOriginResponse(IEnumerable<FlightDto> flights);
 public class FindFight : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
         app.MapGet("/findflight/{originName}", async (string originName, ISender sender) =>
         
-        {
+       {
             var result = await sender.Send(new FindFlightQuery(originName));
 
             var response = result.Adapt<FingFlightByOriginResponse>();

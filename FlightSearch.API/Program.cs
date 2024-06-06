@@ -1,6 +1,3 @@
-using BuildingBlocks.Behaviors;
-using BuildingBlocks.Exceptions.Handler;
-using FlightSearch.API.Data;
 using FlightSearch.Application;
 using FlightSearch.Infrastructure;
 using FluentValidation;
