@@ -8,7 +8,7 @@ public class FindFight : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("/findflight/{originName}", async (string originName, ISender sender) =>
+        app.MapGet("/GetFlight/{originName}", async (string originName, ISender sender) =>
         
        {
             var result = await sender.Send(new FindFlightQuery(originName));

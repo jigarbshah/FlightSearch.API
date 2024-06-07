@@ -32,9 +32,12 @@ builder.Services.AddMarten(opts =>
 //    builder.Services.InitializeMartenWith<FlightInitialData>();
 
 //builder.Services.AddExceptionHandler<CustomExceptionHandler>();
- 
-var app = builder.Build();
+ builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
+var app = builder.Build();
+app.UseSwagger();
+app.UseSwaggerUI();
 // Configure the HTTP request pipeline.
 app.MapCarter();
 
