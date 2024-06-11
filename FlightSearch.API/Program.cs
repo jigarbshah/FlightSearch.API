@@ -1,8 +1,6 @@
 using FlightSearch.Application;
-using FlightSearch.Infrastructure;
+using FlightSearch.Application.Queries;
 using FluentValidation;
-using Marten;
-
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -11,37 +9,39 @@ var assembly = typeof(Program).Assembly;
 builder.Services.AddMediatR(config =>
 {
     config.RegisterServicesFromAssembly(assembly);
-    //config.AddOpenBehavior(typeof(ValidationBehavior<,>));
-    //config.AddOpenBehavior(typeof(LoggingBehavior<,>));
+
 });
 // Add services to the container.
 builder.Services
-    .AddApplicationServices(builder.Configuration)
-    .AddInfrastructureServices(builder.Configuration);
+    .AddApplicationServices(builder.Configuration);
 
 builder.Services.AddValidatorsFromAssembly(assembly);
 
 builder.Services.AddCarter();
 
-builder.Services.AddMarten(opts =>
-{
-    //opts.Connection(builder.Configuration.GetConnectionString("Database")!);
-}).UseLightweightSessions();
-
-////if (builder.Environment.IsDevelopment())
-//    builder.Services.InitializeMartenWith<FlightInitialData>();
-
-//builder.Services.AddExceptionHandler<CustomExceptionHandler>();
- builder.Services.AddEndpointsApiExplorer();
+// Add swagger service registration.
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+ 
+// Add Refit client handler 
+builder.Services.AddRefitClient<IService>()
+    .ConfigureHttpClient(c =>
+    {
+        c.BaseAddress = new Uri(builder.Configuration["ApiSettings:GatewayAddress"]!);
+    });
 
-var app = builder.Build();
+ 
+// Configure the web application.
+var app = builder.Build(); 
+
+// Add Register Swagger middleware
 app.UseSwagger();
 app.UseSwaggerUI();
+ 
+
 // Configure the HTTP request pipeline.
 app.MapCarter();
 
 app.UseExceptionHandler(options => { });
- 
 
 app.Run();

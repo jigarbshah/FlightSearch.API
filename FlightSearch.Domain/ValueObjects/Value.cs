@@ -6,29 +6,15 @@ using System.Threading.Tasks;
 
 namespace FlightSearch.Domain.ValueObjects;
 
-public record Value
+public class Value
 {
 
-    public bool selected { get; set; }
-    public bool enabled { get; set; }
-    public int count { get; set; }
-    public double minPrice { get; set; }
-    public string currency { get; set; }
-    public string displayName { get; set; }
-    public List<Link> links { get; set; }
-    private Value(bool selected, bool enabled, int count, double minPrice, string currency, string displayName, List<Link> links)
-    {
-        this.selected = selected;
-        this.enabled = enabled;
-        this.count = count;
-        this.minPrice = minPrice;
-        this.currency = currency;
-        this.displayName = displayName;
-        this.links = links;
-    }
-    public static Value Of(bool selected, bool enabled, int count, double minPrice, string currency, string displayName, List<Link> links)
-    {
-        return new Value(selected, enabled, count, minPrice, currency,displayName, links);
-    }
-
+    public bool Selected { get; set; }
+    public bool Enabled { get; set; }
+    public int Count { get; set; }
+    public double MinPrice { get; set; }
+    public string Currency { get; set; }
+    public string DisplayName { get; set; }
+    public List<Link> Links { get; set; }
+    
 }

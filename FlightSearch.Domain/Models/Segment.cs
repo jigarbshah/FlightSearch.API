@@ -1,6 +1,6 @@
 ﻿namespace FlightSearch.Domain.Models;
 
-public class Segment : Entity
+public class Segment 
 {
 
     public List<Metal> metal { get; set; } = new List<Metal>();
@@ -20,33 +20,5 @@ public class Segment : Entity
     public string fareBasisCode { get; set; } = default!;
     public string dominantFareProduct { get; set; } = default!;
 
-    public static Segment Create(int id , List<Metal> metal, Airline airline, 
-        string flightNumber, string operatingFlightNumber, OperatingAirline operatingAirline,
-        Origin origin, Destination destination, string duration, DateTime departure,
-        DateTime arrival, int stopCount, string connection, List<Leg> legs, 
-        string bookingClass, string fareBasisCode, string dominantFareProduct)
-    {
-        var segment = new Segment
-        {
-            Id = id,
-            metal = metal,
-            airline = airline,
-            flightNumber = flightNumber,
-            operatingFlightNumber = operatingFlightNumber,
-            operatingAirline = operatingAirline,
-            origin = origin,
-            destination = destination,
-            duration = duration,
-            departure = departure,
-            arrival = arrival,
-            stopCount = stopCount,
-            connection = connection,
-            legs = legs,
-            bookingClass = bookingClass,
-            fareBasisCode = fareBasisCode,
-            dominantFareProduct = dominantFareProduct
-        };
-        return segment;
-    }
 
 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSearch.API", "FlightSearch.API\FlightSearch.API.csproj", "{417C3B42-A851-4FA1-8DF4-6BB5A86781AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightSearch.API", "FlightSearch.API\FlightSearch.API.csproj", "{417C3B42-A851-4FA1-8DF4-6BB5A86781AD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{E8DFF8EA-0C24-45B5-8B39-9E23CCC08754}"
 EndProject
@@ -11,13 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildingBlocks", "BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj", "{95E5230C-3822-41C6-8B3B-DB90EDF2B304}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildingBlocks.Messaging", "BuildingBlocks\BuildingBlocks.Messaging\BuildingBlocks.Messaging.csproj", "{53B37935-506B-45CC-A3B8-8D21AFE0FCE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightSearch.Domain", "FlightSearch.Domain\FlightSearch.Domain.csproj", "{CD96351E-39E3-4559-BE6B-C8DEF73B6C0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSearch.Domain", "FlightSearch.Domain\FlightSearch.Domain.csproj", "{CD96351E-39E3-4559-BE6B-C8DEF73B6C0D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSearch.Infrastructure", "FlightSearch.Infrastructure\FlightSearch.Infrastructure.csproj", "{177FB292-4B49-4E7D-95C5-7B832679BC9B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSearch.Application", "FlightSearch.Application\FlightSearch.Application.csproj", "{0D987FF5-85B4-4174-A7DE-561115E0F530}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightSearch.Application", "FlightSearch.Application\FlightSearch.Application.csproj", "{0D987FF5-85B4-4174-A7DE-561115E0F530}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,18 +29,10 @@ Global
 		{95E5230C-3822-41C6-8B3B-DB90EDF2B304}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95E5230C-3822-41C6-8B3B-DB90EDF2B304}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95E5230C-3822-41C6-8B3B-DB90EDF2B304}.Release|Any CPU.Build.0 = Release|Any CPU
-		{53B37935-506B-45CC-A3B8-8D21AFE0FCE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53B37935-506B-45CC-A3B8-8D21AFE0FCE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53B37935-506B-45CC-A3B8-8D21AFE0FCE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53B37935-506B-45CC-A3B8-8D21AFE0FCE3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CD96351E-39E3-4559-BE6B-C8DEF73B6C0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CD96351E-39E3-4559-BE6B-C8DEF73B6C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD96351E-39E3-4559-BE6B-C8DEF73B6C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD96351E-39E3-4559-BE6B-C8DEF73B6C0D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{177FB292-4B49-4E7D-95C5-7B832679BC9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{177FB292-4B49-4E7D-95C5-7B832679BC9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{177FB292-4B49-4E7D-95C5-7B832679BC9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{177FB292-4B49-4E7D-95C5-7B832679BC9B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0D987FF5-85B4-4174-A7DE-561115E0F530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0D987FF5-85B4-4174-A7DE-561115E0F530}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D987FF5-85B4-4174-A7DE-561115E0F530}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -56,9 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{417C3B42-A851-4FA1-8DF4-6BB5A86781AD} = {E8DFF8EA-0C24-45B5-8B39-9E23CCC08754}
 		{95E5230C-3822-41C6-8B3B-DB90EDF2B304} = {8069B982-B780-44FE-AC93-D6916FEFBAF9}
-		{53B37935-506B-45CC-A3B8-8D21AFE0FCE3} = {8069B982-B780-44FE-AC93-D6916FEFBAF9}
 		{CD96351E-39E3-4559-BE6B-C8DEF73B6C0D} = {E8DFF8EA-0C24-45B5-8B39-9E23CCC08754}
-		{177FB292-4B49-4E7D-95C5-7B832679BC9B} = {E8DFF8EA-0C24-45B5-8B39-9E23CCC08754}
 		{0D987FF5-85B4-4174-A7DE-561115E0F530} = {E8DFF8EA-0C24-45B5-8B39-9E23CCC08754}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

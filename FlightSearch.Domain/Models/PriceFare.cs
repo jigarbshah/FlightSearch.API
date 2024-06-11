@@ -1,34 +1,14 @@
 ﻿//Use in Flight search result
 namespace FlightSearch.Domain.Models;
 
-public class PriceFare :Entity
+public class PriceFare 
 {
-   public Price Price { get; private set; } = new Price();
-    public double Tax { get; private set; } = default!;
-    public double AmountIncludingTax { get; private set; } = default!;
-    public string PriceDifference { get; private set; } = default!;
-    public string PriceDifferenceSign { get; private set; } = default!;
-    public string AwardPointsDifference { get; private set; } = default!;
-    public string AwardPointsDifferenceSign { get; private set; } = default!;
+   public Price Price { get; set; } = new Price();
+    public double Tax { get; set; } = default!;
+    public double AmountIncludingTax { get; set; } = default!;
+    public string PriceDifference { get; set; } = default!;
+    public string PriceDifferenceSign { get; set; } = default!;
+    public string AwardPointsDifference { get; set; } = default!;
+    public string AwardPointsDifferenceSign { get; set; } = default!;
 
-    public static PriceFare Create(int _id, Price _price, double _tax, double amountIncludingTax,
-         string priceDifference ,
-         string priceDifferenceSign ,
-         string awardPointsDifference ,
-         string awardPointsDifferenceSign )
-    {
-        var priceFare = new PriceFare
-        {
-            Id = _id,
-            Price = _price,
-            Tax = _tax,
-            AmountIncludingTax = amountIncludingTax,
-            PriceDifference = priceDifference,
-            PriceDifferenceSign = priceDifferenceSign,
-            AwardPointsDifference = awardPointsDifference,
-            AwardPointsDifferenceSign = awardPointsDifferenceSign
-
-        };
-        return priceFare;
-}
 }

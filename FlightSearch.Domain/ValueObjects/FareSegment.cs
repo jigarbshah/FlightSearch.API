@@ -1,24 +1,13 @@
 ﻿namespace FlightSearch.Domain.ValueObjects
 {
-    public record FareSegment
+    public class FareSegment
     {
 
-        public string cabinName { get; set; }
-        public string bookingClass { get; set; }
-        public bool isDominantLeg { get; set; }
-        public object flightSegmentRefID { get; set; }
-        private FareSegment(string cabinName, string bookingClass, bool isDominantLeg, object flightSegmentRefID)
-        {
-            this.cabinName = cabinName;
-            this.bookingClass = bookingClass;
-            this.isDominantLeg = isDominantLeg;
-            this.flightSegmentRefID = flightSegmentRefID;
-        }
+        public string CabinName { get; set; } = default!;
+        public string BookingClass { get; set; } = default!;
+        public bool isDominantLeg { get; set; } = default!;
+        public object FlightSegmentRefID { get; set; } = default!;
 
-        public static FareSegment Of(string cabinName, string bookingClass, bool isDominantLeg, object flightSegmentRefID)
-        {
-           return new FareSegment(cabinName, bookingClass, isDominantLeg, flightSegmentRefID);
-        }
 
     }
 }

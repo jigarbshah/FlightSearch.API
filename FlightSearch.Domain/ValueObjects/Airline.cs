@@ -6,19 +6,10 @@ using System.Threading.Tasks;
 
 namespace FlightSearch.Domain.ValueObjects
 {
-    public record Airline
+    public class Airline
     {
-    
-        public string code { get; set; }
-        public string name { get; set; }
-        private Airline(string code, string name)
-        {
-            this.code = code;
-            this.name = name;
-        }
-        public static Airline Of(string code, string name)
-        {
-           return new Airline(code, name);
-        }
+        public string Code { get; set; } = default!;
+        public string Name { get; set; } = default!;
+
     }
 }
